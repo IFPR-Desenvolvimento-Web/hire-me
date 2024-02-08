@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&family=Roboto+Slab:wght@100;300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap");
+
+:root {
+    --first-color: #fff;
+    --second-color: #00e5fc;
+    --third-color: #2727ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--third-color);
+    color: var(--first-color);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site .container {
+    flex-grow: 1;
+    /* proporção e distribuição de */
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    margin: 2% 10% 2% 10%;
+}
+.cabecalho nav a {
+    text-decoration: none;
+    color: var(--first-color);
+}
+
+.cabecalho nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 2% 10% 2% 10%;
+    padding-bottom: 25px;
+}
+
+/* CONTEUDO */
+.container .conteudo {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.container .conteudo h1 {
+    font-size: 4rem;
+    line-height: 3.5rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+}
+
+.container .conteudo h1 span {
+    color: var(--second-color);
+}
+
+.container .conteudo p {
+    line-height: 1.8rem;
+}
+
+.container .conteudo .lista-tecnologias {
+    margin-left: 18px;
+    line-height: 1.5rem;
+    font-family: Poppins;
+}
+
+.container .redes-sociais {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .redes-sociais a {
+    width: 200px;
+    border: solid 1px var(--second-color);
+    text-decoration: none;
+    color: var(--first-color);
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.container .redes-sociais a:hover {
+    border: solid 1px var(--second-color);
+    color: var(--second-color);
+    font-weight: bold;
+    background-color: var(--first-color);
+}
+
+/* AVATAR */
+.container .avatar {
+    /* width: 50%; */
+    width: 20%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background: url(imgs/half.png) no-repeat;
+    background-size: cover;
+    background-position: right;
+    filter: grayscale(100%);
+    transition: all linear 0.25s;
+}
+
+.container .avatar:hover {
+    margin-left: -30%;
+    transform: rotate(-5deg);
+
+    filter: none;
+}
+
+.container .avatar img {
+    /* margin-top: -450px; */
+    /* max-width: 100%;
+        overflow: hidden; */
+}
+
+/* PORTIFOLIO */
+.portifolio-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.portifolio-container .projeto {
+    width: 33%;
+    overflow: hidden;
+}
+
+.portifolio-container .projeto img {
+    max-height: 200px;
+}
+
+.rodape {
+    background: var(--second-color);
+    color: var(--first-color);
+    padding: 24px;
+    text-align: center;
+}
+
+.rodape marquee {
+    width: fit-content;
+}
+
+/* COMPONENTES */
+
+.container .title {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.container .title::after {
+    content: ""; height: 8px;
+    width: 40px;
+    background: var(--second-color);
+    position: absolute;
+    left: 2px;
+    bottom: -5px;
+}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 768px) {
+    :root {
+        --first-color: #fff;
+        --second-color: #eac04e;
+        --third-color: #160c28;
+
+        font-size: 12px;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .container .conteudo {
+        width: 100%;
+    }
+
+    .container .avatar {
+        width: 100%;
+    }
+
+    .container .avatar img {
+        margin-top: 0;
+        width: 100%;
+    }
+}
